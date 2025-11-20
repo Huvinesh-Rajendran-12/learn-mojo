@@ -54,11 +54,11 @@ struct Grid(Copyable, Movable, Stringable):
                     self[row_below, col_right]
                 )
                 if self[row, col] == 1:
-                    if neighbors < 2 or neighbors > 3:
+                    if num_neighbors < 2 or num_neighbors > 3:
                         next_generation[row][col] = 0
                     else:
                         next_generation[row][col] = 1
                 else:
-                    if neighbors == 3:
+                    if num_neighbors == 3:
                         next_generation[row][col] = 1
         return Self(self.rows, self.cols, next_generation^)
