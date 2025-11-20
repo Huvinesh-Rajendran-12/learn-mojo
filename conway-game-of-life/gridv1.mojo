@@ -36,7 +36,6 @@ struct Grid(Copyable, Movable, Stringable):
     fn evolve(self) -> Self:
         var next_generation: List[List[Int]] = []
         for row in range(self.rows):
-            row_data = List[Int]()
             row_above = (row - 1) % self.rows
             row_below = (row + 1) % self.rows
 
